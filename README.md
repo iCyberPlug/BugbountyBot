@@ -14,3 +14,5 @@ Recommendation:
 It is recommended that the binaries that are used to be moved into /usr/local/bin
 
 ![image](https://user-images.githubusercontent.com/47476901/147713622-359870f7-0bc9-42f1-bf68-74a9a0f56782.png)
+
+Updates are being uploaded daily, be patient, any suggestion let us know.
