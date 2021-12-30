@@ -43,7 +43,7 @@ async def sub(ctx, domain):
 @bot.command()
 async def take(ctx, take):
     await ctx.send("Looking for SubdomainTakeOver...")
-    os.system("findomain -t" +  take + "> /tmp/subs.txt"")
+    os.system("findomain -t" +  take + "> /tmp/subs.txt")
     os.system("cat /tmp/subs.txt|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>'|httprobe --prefer-https > /tmp/subdomains.txt")
     os.system("subzy --targets /tmp/subdomains.txt" + "> /tmp/take.txt")
     os.system("cat /tmp/take.txt|egrep -v 'Loaded'|egrep -v 'default'|egrep -v 'Concurrent'|egrep -v 'verify_ssl'|egrep -v 'timeout'|egrep -v 'hide_fails'|sed 's|[]\[]0m| |g'|sed 's|[]\[]31m| |g' > /tmp/subtakeover.txt")
