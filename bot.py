@@ -62,16 +62,7 @@ async def dir(ctx, domain, rute):
     os.system("subcheck /tmp/subdominios.txt " + rute + "> /tmp/directorios.txt")
     await ctx.send(file=discord.File(r'/tmp/directorios.txt'))
 
-
-### 7- Comando PELIGROSO!!! ###
-#@bot.command()
-#async def cmd(ctx, command):
-#    os.system(command + "> /tmp/commands.txt")
-#    f = open("/tmp/commands.txt",'r',encoding = 'utf-8')
-#    await ctx.send(f.read())
-
-
-### 8- Muestra el precio del bitcoin ###
+### 7- Muestra el precio del bitcoin ###
 @bot.command()
 async def bitcoin(ctx):
     url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
