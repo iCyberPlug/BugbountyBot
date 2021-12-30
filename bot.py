@@ -54,7 +54,7 @@ async def take(ctx, take):
 async def dir(ctx, domain, rute):
     await ctx.send("Scanning directories...")
     os.system("findomain -t" +  domain + "> /tmp/subs.txt")
-    os.system("cat /tmp/subs.txt|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>'|httprobe --prefer-https > /tmp/subdomimains.txt")
+    os.system("cat /tmp/subs.txt|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>'|httprobe --prefer-https > /tmp/subdomains.txt")
     os.system("subcheck /tmp/subdomains.txt " + rute + "> /tmp/directories.txt")
     await ctx.send(file=discord.File(r'/tmp/directories.txt'))
 
