@@ -16,7 +16,7 @@ bot = commands.Bot(command_prefix='$', description="Web audit bot")
 
 ### 1- Show all available commands ###
 @bot.command()
-async def ayuda(ctx):
+async def show(ctx):
     await ctx.send("```bash\n Results: \n $show Show allowed commands. \n $info Server information. \n $sub Enter a page and show you its subdomains. Example: $sub discord.com \n $take Indicates whether there is a subdomain vulnerable to SubdomainTakeOver. Example: $take discord.com \n $dir Status code of the indicated directory of all subdomains. Example: $dir discord.com /robots.txt \n $bitcoin Current bitcoin price.```")
 
 ### 2- Displays information about the discord ###
