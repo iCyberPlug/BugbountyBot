@@ -40,7 +40,7 @@ async def ping(ctx):
 @bot.command()
 async def sub(ctx, domain):
     await ctx.send("Escaneando subdominios...")
-    os.system("findomain -t" +  domain + "> /tmp/subs.txt")
+    os.system("./findomain -t" +  domain + "> /tmp/subs.txt")
     os.system("cat /tmp/subs.txt|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>' > /tmp/subdominios.txt")
     await ctx.send(file=discord.File(r'/tmp/subdominios.txt'))
 
@@ -50,7 +50,7 @@ async def take(ctx, take):
     await ctx.send("Buscando SubdomainTakeOver...")
     os.system("findomain -t" +  take + "> /tmp/subdominios.txt")
     os.system("cat /tmp/subs.txt|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>'|httprobe --prefer-https > /tmp/subdominios.txt")
-    os.system("subzy --targets /tmp/subdominios.txt" + "> /tmp/take.txt")
+    os.system("./subzy --targets /tmp/subdominios.txt" + "> /tmp/take.txt")
     os.system("cat /tmp/take.txt|egrep -v 'Loaded'|egrep -v 'default'|egrep -v 'Concurrent'|egrep -v 'verify_ssl'|egrep -v 'timeout'|egrep -v 'hide_fails'|sed 's|[]\[]0m| |g'|sed 's|[]\[]31m| |g' > /tmp/subtakeover.txt")
     await ctx.send(file=discord.File(r'/tmp/subtakeover.txt'))
 
@@ -58,8 +58,9 @@ async def take(ctx, take):
 @bot.command()
 async def dir(ctx, domain, rute):
     await ctx.send("Escaneando directorios...")
-    os.system("findomain -t" +  domain + "> /tmp/subdominios.txt && subcheck /tmp/subdominios.txt " + rute + "> /tmp/dir.txt")
-    os.system("cat /tmp/dir.txt|egrep -v '000'|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>' > /tmp/directorios.txt")
+    os.system("findomain -t" +  domain + "> /tmp/subs.txt")
+    os.system("cat /tmp/subs.txt|egrep -v 'Searching'|egrep -v 'Job'|egrep -v 'Good'|egrep -v 'Target ==>'|httprobe --prefer-https > /tmp/subdominios.txt")
+    os.system("./subcheck /tmp/subdominios.txt " + rute + "> /tmp/directorios.txt")
     await ctx.send(file=discord.File(r'/tmp/directorios.txt'))
 
 
