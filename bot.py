@@ -12,7 +12,7 @@ import requests
 
 # Character by which it identifies if it goes to the bot
 # Description bot
-bot = commands.Bot(command_prefix='$', description="Web audit bot"")
+bot = commands.Bot(command_prefix='$', description="Web audit bot")
 
 ### 1- Show all available commands ###
 @bot.command()
