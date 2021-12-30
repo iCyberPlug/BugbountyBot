@@ -3,6 +3,8 @@ Discord Bot for Bug Bounty Web
 
 The purpose of this bot is to automate the recognition process for bug bounty issues.
 
+Use "$show" to view all the tools settings on discord
+
 The only requirements are:
 * [findomain](https://github.com/Findomain/Findomain)
 * [subzy](https://github.com/LukaSikic/subzy)
