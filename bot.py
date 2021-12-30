@@ -30,7 +30,7 @@ async def info(ctx):
     #embed.set_thumbnail(url="<url_icon>")
     await ctx.send(embed=embed)
 
-### 3- Test de respuesta al poner $ping ###
+### 3- Test de respuesta al poner $ping ##
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
