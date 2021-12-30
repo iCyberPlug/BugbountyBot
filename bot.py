@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix='$', description="Bot de auditoria web")
 ### 1- Muestra todos los comandos disponibles ###
 @bot.command()
 async def ayuda(ctx):
-    await ctx.send("```php\n Esto es lo que buscas: \n $ayuda Muestra los comandos permitidos \n $info Informacion del servidor \n $ping Testeo de respuesta \n $sub Introduce una pagina y te muestra sus subdominios \n $take Indica si existe un subdominio vulnerable al SubdomainTakeOver \n $dir Codigo de respuesta del directorio indicado ej: $dir google.es /robots.txt \n $bitcoin Precio del bitcoin actual```")
+    await ctx.send("```php\n Esto es lo que buscas: \n $ayuda Muestra los comandos permitidos \n $info Informacion del servidor \n $ping Testeo de respuesta \n $sub Introduce una pagina y te muestra sus subdominios ej: $sub discord.com \n $take Indica si existe un subdominio vulnerable al SubdomainTakeOver ej: $take discord.com \n $dir Codigo de respuesta del directorio indicado de todos los subdominios ej: $dir discord.com /robots.txt \n $bitcoin Precio del bitcoin actual```")
 
 ### 2- Muestra infomacion sobre el discord ###
 @bot.command()
